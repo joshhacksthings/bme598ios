@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var Decimal: UIButton!
     @IBOutlet weak var Evaluate: UIButton!
     
-    
     // Button labels: Numbers
     @IBOutlet weak var zero: UIButton!
     @IBOutlet weak var one: UIButton!
