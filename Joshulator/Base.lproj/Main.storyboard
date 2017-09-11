@@ -29,20 +29,9 @@
                                 <state key="normal" title="C">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0w-UQ-DlA" userLabel="Left Parenthesis ">
-                                <rect key="frame" x="106" y="316" width="80" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <state key="normal" title="("/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xo-c1-bcS" userLabel="Right Parenthesis">
-                                <rect key="frame" x="189" y="316" width="80" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <state key="normal" title=")"/>
+                                <connections>
+                                    <action selector="clearDisplay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vdS-BA-iK7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVO-Q7-JYH" userLabel="Divide">
                                 <rect key="frame" x="272" y="316" width="80" height="64"/>
@@ -180,13 +169,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="+"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4i5-E9-6Cv" userLabel="Negate">
-                                <rect key="frame" x="23" y="583" width="80" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <state key="normal" title="+/-"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLN-4D-NIV" userLabel="0">
                                 <rect key="frame" x="106" y="583" width="80" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -229,6 +211,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4i5-E9-6Cv" userLabel="Negate">
+                                <rect key="frame" x="23" y="583" width="80" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <state key="normal" title="+/-"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
@@ -241,13 +230,13 @@
                         <outlet property="Negate" destination="4i5-E9-6Cv" id="dUp-kQ-GMQ"/>
                         <outlet property="Subtract" destination="SFN-ri-v9W" id="kz7-3e-Ylw"/>
                         <outlet property="clearButton" destination="L89-eC-eg9" id="XST-qL-iVy"/>
+                        <outlet property="displayEq" destination="d3z-Cp-cij" id="psB-hC-Vth"/>
                         <outlet property="eight" destination="6rF-0P-7MY" id="OKG-YZ-TwE"/>
                         <outlet property="five" destination="5yo-ET-FDx" id="9yW-Xa-KSm"/>
                         <outlet property="four" destination="VhY-0A-FIQ" id="pFS-C5-HRi"/>
-                        <outlet property="leftParen" destination="Q0w-UQ-DlA" id="1VW-40-UK5"/>
                         <outlet property="nine" destination="AFA-xZ-HsR" id="ZrH-EY-Fmd"/>
                         <outlet property="one" destination="qXD-wf-M5N" id="6yQ-bK-rLW"/>
-                        <outlet property="rightParen" destination="5Xo-c1-bcS" id="RMg-tl-w4w"/>
+                        <outlet property="output" destination="kil-60-jFn" id="Xjv-Mj-ScO"/>
                         <outlet property="seven" destination="yjh-sg-Gnk" id="3Hl-qt-Dkx"/>
                         <outlet property="six" destination="Ljp-bZ-E1D" id="lQy-bz-9hE"/>
                         <outlet property="three" destination="a6E-98-ZCC" id="7wj-kg-FsI"/>

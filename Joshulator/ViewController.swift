@@ -15,7 +15,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    var displayNum : Int = 0
+    
+    @IBOutlet weak var output: UILabel!
+    @IBOutlet weak var displayEq: UILabel!
     let userName : String = "Josh"
     
     // Button labels: Operations
@@ -43,8 +45,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var nine: UIButton!
     
     // Button presses
+    let disp : String = ""
     @IBAction func buttonPress(_ sender: UIButton) {
+        displayEq.text = disp + (sender.titleLabel?.text)!
+    }
     
+    // Clear
+    @IBAction func clearDisplay(_ sender: UIButton) {
+        displayEq.text = ""
     }
     
     
