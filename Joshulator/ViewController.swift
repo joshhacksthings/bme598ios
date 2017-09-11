@@ -42,6 +42,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var eight: UIButton!
     @IBOutlet weak var nine: UIButton!
     
+    // Button presses
+    @IBAction func buttonPress(_ sender: UIButton) {
+    
+    }
+    
     
 }
 
