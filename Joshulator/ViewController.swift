@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     }
 
     var displayNum : Int = 0
+    let userName : String = "Josh"
     
 
 }
