@@ -50,6 +50,14 @@ class ViewController: UIViewController {
         displayEq.text = disp + (sender.titleLabel?.text)!
     }
     
+    // Decimal
+    @IBAction func addDecimal(_ sender: UIButton) {
+        if disp.range(of: ".") != nil {
+            displayEq.text = disp + (sender.titleLabel?.text)!
+        }
+    }
+    
+    
     // Clear
     @IBAction func clearDisplay(_ sender: UIButton) {
         displayEq.text = ""
