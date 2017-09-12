@@ -45,15 +45,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var nine: UIButton!
     
     // Button presses
-    let disp : String = ""
+    var disp : String = ""
     @IBAction func buttonPress(_ sender: UIButton) {
-        displayEq.text = disp + (sender.titleLabel?.text)!
+        disp = disp + (sender.titleLabel?.text)!
+        displayEq.text = disp
     }
     
     // Decimal
     @IBAction func addDecimal(_ sender: UIButton) {
-        if disp.range(of: ".") != nil {
-            displayEq.text = disp + (sender.titleLabel?.text)!
+        if displayEq.text?.range(of: ".") != nil {
+            disp = disp + (sender.titleLabel?.text)!
+            displayEq.text = disp
         }
     }
     
