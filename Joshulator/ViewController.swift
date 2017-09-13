@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.output.text = disp
     }
 
     
@@ -46,14 +47,27 @@ class ViewController: UIViewController {
     
     // Button presses
     var disp : String = ""
+    var isOperator = false
+    var oper : String = ""
     @IBAction func buttonPress(_ sender: UIButton) {
-        disp = disp + (sender.titleLabel?.text)!
-        displayEq.text = disp
+        let input : String = (sender.titleLabel?.text)!
+        switch input {
+        case "+", "-", "/", "x":
+            if isOperator {
+                return
+            }
+            oper = input
+            isOperator = true
+            fallthrough
+        default:
+            disp = disp + (sender.titleLabel?.text)!
+            displayEq.text = disp
+        }
     }
     
     // Decimal
     @IBAction func addDecimal(_ sender: UIButton) {
-        if displayEq.text?.range(of: ".") != nil {
+        if !(displayEq.text?.characters.contains("."))! {
             disp = disp + (sender.titleLabel?.text)!
             displayEq.text = disp
         }
@@ -62,23 +76,48 @@ class ViewController: UIViewController {
     
     // Clear
     @IBAction func clearDisplay(_ sender: UIButton) {
-        displayEq.text = ""
+        disp = ""
+        isOperator = false
+        oper = ""
+        output.text = ""
+        displayEq.text = disp
     }
     
     // Calculate equation
     @IBAction func doCalc(_ sender: UIButton) {
-        let eq = displayEq.text
-        let firstNum : String
-        let secondNum : String
-        for var index in (eq?.characters.indices)! {
-            switch eq {
-            case "+", "x", "/", "-":
-                firstNum = eq.substring(to: index)
-                secondNum = eq.substring(from: I=index)
-            default:
-                break;
+        let eq : String = (displayEq.text)!
+        if isOperator {
+            for index in eq.characters.indices {
+                switch eq[index] {
+                case "+":
+                    let firstNum : Double = Double(eq.substring(to: index))!
+                    let secondNum : Double = Double(eq.substring(from: eq.index(after: index)))!
+                    disp = String(firstNum + secondNum)
+                case "-":
+                    let firstNum : Double = Double(eq.substring(to: index))!
+                    let secondNum : Double = Double(eq.substring(from: eq.index(after: index)))!
+                    disp = String(firstNum - secondNum)
+                case "/":
+                    let firstNum : Double = Double(eq.substring(to: index))!
+                    let secondNum : Double = Double(eq.substring(from: eq.index(after: index)))!
+                    disp = String(firstNum / secondNum)
+                case "x":
+                    let firstNum : Double = Double(eq.substring(to: index))!
+                    let secondNum : Double = Double(eq.substring(from: eq.index(after: index)))!
+                    disp = String(firstNum * secondNum)
+                default:
+                    displayEq.text = disp;
+                }
+                displayEq.text = disp
+                output.text = disp;
+                isOperator = false
+                oper = ""
             }
         }
+        
+        //let firstNum : String
+        //let secondNum : String
+        
     }
 }
 
