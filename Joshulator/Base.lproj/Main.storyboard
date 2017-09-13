@@ -248,26 +248,8 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="Add" destination="m8Z-Vl-MRO" id="no2-my-g2C"/>
-                        <outlet property="Decimal" destination="g6d-a6-1Nb" id="my0-bn-a90"/>
-                        <outlet property="Divide" destination="YVO-Q7-JYH" id="YaG-mr-vhH"/>
-                        <outlet property="Evaluate" destination="cET-L4-pXg" id="H8R-fw-43J"/>
-                        <outlet property="Multiply" destination="2JZ-Y0-NaC" id="rHb-nR-l2f"/>
-                        <outlet property="Negate" destination="4i5-E9-6Cv" id="dUp-kQ-GMQ"/>
-                        <outlet property="Subtract" destination="SFN-ri-v9W" id="kz7-3e-Ylw"/>
-                        <outlet property="clearButton" destination="L89-eC-eg9" id="XST-qL-iVy"/>
                         <outlet property="displayEq" destination="d3z-Cp-cij" id="psB-hC-Vth"/>
-                        <outlet property="eight" destination="6rF-0P-7MY" id="OKG-YZ-TwE"/>
-                        <outlet property="five" destination="5yo-ET-FDx" id="9yW-Xa-KSm"/>
-                        <outlet property="four" destination="VhY-0A-FIQ" id="pFS-C5-HRi"/>
-                        <outlet property="nine" destination="AFA-xZ-HsR" id="ZrH-EY-Fmd"/>
-                        <outlet property="one" destination="qXD-wf-M5N" id="6yQ-bK-rLW"/>
                         <outlet property="output" destination="kil-60-jFn" id="Xjv-Mj-ScO"/>
-                        <outlet property="seven" destination="yjh-sg-Gnk" id="3Hl-qt-Dkx"/>
-                        <outlet property="six" destination="Ljp-bZ-E1D" id="lQy-bz-9hE"/>
-                        <outlet property="three" destination="a6E-98-ZCC" id="7wj-kg-FsI"/>
-                        <outlet property="two" destination="p2l-DQ-t8I" id="4s3-M7-nZg"/>
-                        <outlet property="zero" destination="cLN-4D-NIV" id="cda-ui-Cq9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
