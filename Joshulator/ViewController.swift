@@ -65,6 +65,20 @@ class ViewController: UIViewController {
         displayEq.text = ""
     }
     
-    
+    // Calculate equation
+    @IBAction func doCalc(_ sender: UIButton) {
+        let eq = displayEq.text
+        let firstNum : String
+        let secondNum : String
+        for var index in (eq?.characters.indices)! {
+            switch eq {
+            case "+", "x", "/", "-":
+                firstNum = eq.substring(to: index)
+                secondNum = eq.substring(from: I=index)
+            default:
+                break;
+            }
+        }
+    }
 }
 
