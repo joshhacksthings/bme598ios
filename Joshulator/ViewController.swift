@@ -27,14 +27,19 @@ class ViewController: UIViewController {
     var isOperator = false
     var oper : String = ""
     var hasDecimal = false
+    var hasNegative = false
     @IBAction func buttonPress(_ sender: UIButton) {
         let input : String = (sender.titleLabel?.text)!
         switch input {
         case "+/-":
-            if !isOperator {
+            if !hasNegative {
                 disp = "-" + disp
-                displayEq.text = disp
+                hasNegative = true
+            } else {
+                disp.remove(at: disp.startIndex)
+                hasNegative = false
             }
+             displayEq.text = disp
         case "+", "-", "/", "x":
             if isOperator {
                 return
@@ -67,6 +72,7 @@ class ViewController: UIViewController {
         output.text = ""
         hasDecimal = false
         displayEq.text = disp
+        hasNegative = false
     }
     
     // Calculate equation
@@ -80,6 +86,9 @@ class ViewController: UIViewController {
                     let secondNum : Double = Double(eq.substring(from: eq.index(after: index)))!
                     disp = String(firstNum + secondNum)
                 case "-":
+                    if index == eq.startIndex {
+                        break
+                    }
                     let firstNum : Double = Double(eq.substring(to: index))!
                     let secondNum : Double = Double(eq.substring(from: eq.index(after: index)))!
                     disp = String(firstNum - secondNum)
